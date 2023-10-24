@@ -4,7 +4,7 @@ import Header from "./components/header";
 import MountainPage from "./pages/mountain/mountainPage";
 import OceanPage from "./pages/ocean/oceanPage";
 import ForestPage from "./pages/forest/forestPage";
-import "./App.css";
+import NotFound from "./pages/notFound/notFoundPage";
 
 const App = () => {
   return (
@@ -12,7 +12,7 @@ const App = () => {
       <Typography
         sx={{
           fontFamily: "Bebas Neue",
-          fontSize: "100px",
+          fontSize: "80px",
           textAlign: "center",
         }}
       >
@@ -20,9 +20,11 @@ const App = () => {
       </Typography>
       <Header />
       <Routes>
+        <Route path="/" element={<MountainPage />} />
         <Route path="/Mountains" element={<MountainPage />} />
         <Route path="/Oceans" element={<OceanPage />} />
         <Route path="/Forests" element={<ForestPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Box>
   );
