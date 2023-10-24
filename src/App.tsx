@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/header";
+import SearchBar from "./components/searchBar";
 import MountainPage from "./pages/mountain/mountainPage";
 import OceanPage from "./pages/ocean/oceanPage";
 import ForestPage from "./pages/forest/forestPage";
@@ -18,6 +19,7 @@ const App = () => {
       >
         Snapshot
       </Typography>
+      <SearchBar />
       <Header />
       <Routes>
         <Route path="/" element={<MountainPage />} />
