@@ -1,17 +1,32 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { useSearchBar } from "../hooks/useSearchBar";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const { text, changeText } = useSearchBar();
   const [isHovered, setIsHovered] = useState(false);
 
+  // Initialize state from localStorage on component mount
+  useEffect(() => {
+    const storedText = localStorage.getItem("searchText");
+    if (storedText) {
+      changeText(storedText);
+    }
+  }, []);
+
+  // Update localStorage whenever text state changes
+  useEffect(() => {
+    localStorage.setItem("searchText", text);
+  }, [text]);
+
+  const navigate = useNavigate();
+
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    window.history.pushState({}, "", `/${text}`);
+    navigate(`/${text}`);
   };
-  console.log(text);
 
   return (
     <form onSubmit={handleSubmit}>
@@ -29,6 +44,7 @@ const SearchBar = () => {
           onChange={(event) => {
             changeText(event.target.value);
           }}
+          value={text}
         />
         <button
           style={{

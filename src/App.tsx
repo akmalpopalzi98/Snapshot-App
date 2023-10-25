@@ -6,8 +6,12 @@ import MountainPage from "./pages/mountain/mountainPage";
 import OceanPage from "./pages/ocean/oceanPage";
 import ForestPage from "./pages/forest/forestPage";
 import NotFound from "./pages/notFound/notFoundPage";
+import CustomPage from "./pages/custom/customPage";
+import { useSearchBar } from "./hooks/useSearchBar";
 
 const App = () => {
+  const { text } = useSearchBar();
+
   return (
     <Box>
       <Typography
@@ -26,6 +30,7 @@ const App = () => {
         <Route path="/Mountains" element={<MountainPage />} />
         <Route path="/Oceans" element={<OceanPage />} />
         <Route path="/Forests" element={<ForestPage />} />
+        <Route path={`/${text}`} element={<CustomPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Box>
