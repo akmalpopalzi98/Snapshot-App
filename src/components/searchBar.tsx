@@ -6,9 +6,10 @@ import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const { text, changeText } = useSearchBar();
+  const [inputValue, setInputValue] = useState(""); // Use local state for input value
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
-  // Initialize state from localStorage on component mount
   useEffect(() => {
     const storedText = localStorage.getItem("searchText");
     if (storedText) {
@@ -21,11 +22,16 @@ const SearchBar = () => {
     localStorage.setItem("searchText", text);
   }, [text]);
 
-  const navigate = useNavigate();
+  // Set input value from text state only on component mount
+  // useEffect(() => {
+  //   setInputValue(text);
+  // }, [text]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    navigate(`/${text}`);
+    changeText(inputValue); // Update the state with the input value
+    navigate(`/${inputValue}`);
+    setInputValue("");
   };
 
   return (
@@ -41,10 +47,8 @@ const SearchBar = () => {
         <input
           style={{ fontSize: "16px", padding: "10px", height: "10px" }}
           placeholder="search image"
-          onChange={(event) => {
-            changeText(event.target.value);
-          }}
-          value={text}
+          onChange={(event) => setInputValue(event.target.value)}
+          value={inputValue} // Use local state for input value
         />
         <button
           style={{
