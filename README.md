@@ -43,21 +43,14 @@ Features
 To run this project locally, follow these steps:
 
     Clone the repository:
-
-    bash
-
-git clone [repository-url]
-cd [project-directory]
+    git clone [repository-url]
+    cd [project-directory]
 
 Install dependencies:
 
-bash
-
-npm install
+    npm install
 
 Start the development server:
-
-bash
 
     npm run dev
 
