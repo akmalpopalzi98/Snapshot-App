@@ -18,7 +18,7 @@ const listImages = ({ term }: { term: string }) => {
     };
 
     getData();
-  }, []);
+  }, [term]);
 
   const renderedData = imageList.map((image: ImageType) => {
     return (
