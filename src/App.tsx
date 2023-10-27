@@ -13,7 +13,7 @@ const App = () => {
   const { text } = useSearchBar();
 
   return (
-    <Box>
+    <Box sx={{ width: "1200px", margin: "0 auto" }}>
       <Typography
         sx={{
           fontFamily: "Bebas Neue",
