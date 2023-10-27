@@ -1,31 +1,57 @@
-<<<<<<< HEAD
-# Snapshot-App
-=======
-# React + TypeScript + Vite
+#Snapshot
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Snapshot is a React-based web application that allows users to search and view images related to specific topics such as mountains, oceans, and forests. Users can search for images using a search bar and view the search results in a visually appealing grid layout.
+Table of Contents
 
-Currently, two official plugins are available:
+    Overview
+    Features
+    Technologies Used
+    Installation
+    Usage
+    Contributing
+    License
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#Overview
 
-## Expanding the ESLint configuration
+Snapshot is a web application designed to provide users with a seamless image search experience. It utilizes React.js for the frontend, integrating Material-UI components for a polished user interface. The application incorporates a search bar that allows users to enter specific search terms, retrieving relevant images from the Unsplash API. Users can explore search results in a grid layout, providing a visually engaging experience.
+Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+    Image Search: Users can enter search terms in the search bar to find images related to specific topics.
+    Grid Layout: Search results are displayed in a grid layout, allowing users to view multiple images at once.
+    Loading Indicator: A loading indicator is displayed while search results are being fetched, providing feedback to users.
 
-- Configure the top-level `parserOptions` property like this:
+T#echnologies Used
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+    React.js: A JavaScript library for building user interfaces.
+    Material-UI: A popular React UI framework for designing modern and responsive web applications.
+    React Router: A library for enabling client-side routing in React applications.
+    Unsplash API: An API for accessing a vast collection of high-quality images.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
->>>>>>> e9d882b (adding inital project files)
+#Installation
+
+To run this project locally, follow these steps:
+
+    Clone the repository:
+
+    bash
+
+git clone [repository-url]
+cd [project-directory]
+
+Install dependencies:
+
+bash
+
+npm install
+
+Start the development server:
+
+bash
+
+    npm run dev
+
+#Usage
+
+    Open the application in your web browser.
+    Enter specific search terms in the search bar and press Enter.
+    Explore the search results displayed in the grid layout.
