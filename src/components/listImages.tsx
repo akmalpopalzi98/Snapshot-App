@@ -29,11 +29,41 @@ const listImages = ({ term }: { term: string }) => {
       />
     );
   });
-  console.log(imageList);
 
   return (
-    <Box sx={{ display: "flex" }}>
-      {isloading ? <CircularProgress /> : renderedData}
+    <Box
+      sx={{
+        display: "flex",
+
+        justifyContent: "center",
+      }}
+    >
+      <Box
+        sx={{
+          margin: "20px",
+          display: "grid",
+          gridTemplateColumns: "200px 200px 200px 200px 200px",
+          columnGap: "10px",
+          rowGap: "10px",
+        }}
+      >
+        {isloading ? (
+          <Box
+            sx={{
+              width: "990px",
+              display: "flex",
+              justifyContent: "center",
+              marginLeft: "30px",
+              height: "400px",
+              alignItems: "center",
+            }}
+          >
+            <CircularProgress />
+          </Box>
+        ) : (
+          renderedData
+        )}
+      </Box>
     </Box>
   );
 };

@@ -9,7 +9,7 @@ const fetchData = async (term: string) => {
     },
     params: {
       query: term,
-      per_page: 21,
+      per_page: 15,
     },
   });
 
