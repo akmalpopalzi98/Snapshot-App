@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const access_key = "wZIRQnw7XaGOcE9ERzlHhUMffk9g8Y44uSecXoVIkp4";
-const secret_key = "XgPzOnzg3cGfleP0HVl73k5npwPzDQlcNRWEVGy6Zr0";
 
 const fetchData = async (term: string) => {
   const response = await axios.get("https://api.unsplash.com/search/photos", {
@@ -10,7 +9,7 @@ const fetchData = async (term: string) => {
     },
     params: {
       query: term,
-      per_page: 20,
+      per_page: 21,
     },
   });
 
