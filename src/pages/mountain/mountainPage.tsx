@@ -1,5 +1,12 @@
-const mountainPage = () => {
-  return <div>Mountain Page</div>;
+import { Box } from "@mui/material";
+import ListImages from "../../components/listImages";
+
+const MountainPage = () => {
+  return (
+    <Box>
+      <ListImages term="mountains" />
+    </Box>
+  );
 };
 
-export default mountainPage;
+export default MountainPage;

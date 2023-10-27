@@ -5,11 +5,9 @@ import { BrowserRouter } from "react-router-dom";
 import { SearchProvider } from "./context/searchBarContext.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <SearchProvider>
-        <App />
-      </SearchProvider>
-    </BrowserRouter>
-  </React.StrictMode>
+  <BrowserRouter>
+    <SearchProvider>
+      <App />
+    </SearchProvider>
+  </BrowserRouter>
 );
